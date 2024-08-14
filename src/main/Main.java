@@ -3,7 +3,9 @@ package main;
 import cliente.Cliente;
 import conta.Conta;
 import conta.ContaCorrente;
-import conta.ContaPoupanca;
+import conta.ContaInvestimentos;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +15,16 @@ public class Main {
         Conta corrente = new ContaCorrente(Elifelete);  
         corrente.depositar((double)100);
 
-        Conta poupanca = new ContaPoupanca(Elifelete);
-        corrente.transferir((double)50, poupanca);
+        Conta investimento = new ContaInvestimentos(Elifelete);
+        corrente.transferir((double)50, investimento);
         corrente.imprimirExtrato();
-        poupanca.imprimirExtrato();
+        investimento.imprimirExtrato();
+        
+        //Adicionando contas ao Array: 
+        List<Conta> listaContas = new ArrayList<>();
+        listaContas.add(corrente);
+        listaContas.add(investimento);
+        Elifelete.setContas(listaContas);
     }
+
 }

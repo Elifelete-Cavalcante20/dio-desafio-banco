@@ -1,7 +1,7 @@
 package cliente;
 
-import java.util.List;
 import conta.Conta;
+import java.util.List;
 
 
 public class Cliente{
@@ -27,4 +27,6 @@ public class Cliente{
     public String toString(){
         return nome;
     }
+    
 }
+    
